@@ -11,7 +11,7 @@ const Navbar = () => {
     const checkLoginStatus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:7000/v1/user/checkLogin",
+          "https://canibunk.onrender.com/v1/user/checkLogin",
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -29,7 +29,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:7000/v1/user/logout", {
+      await axios.get("https://canibunk.onrender.com/v1/user/logout", {
         withCredentials: true,
         headers: { "Content-Type": "application/json" },
       });

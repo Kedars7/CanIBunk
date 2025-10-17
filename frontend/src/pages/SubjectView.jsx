@@ -127,7 +127,7 @@ const SubjectView = () => {
     const fetchLectures = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/v1/lectures/${id}`,
+          `https://canibunk.onrender.com/v1/lectures/${id}`,
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -152,6 +152,7 @@ const SubjectView = () => {
         Number(subject.totalConducted)
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subject]);
 
   function futureMessage(attended, conducted) {
