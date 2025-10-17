@@ -8,6 +8,7 @@ import SubjectView from './pages/SubjectView';
 import AddSubject from './pages/AddSubject';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
+import NotFound from './pages/NotFound';
 import {Toaster} from 'react-hot-toast';
 
 
@@ -40,6 +41,7 @@ const App = () => {
         <Route path='/addlecture' element={<AddLecture/>}/>
         <Route path='/subjectview/:id' element={<SubjectView/>}/>
         <Route path='/addsubject' element={<AddSubject/>}/>
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
       <Toaster position="top-right" reverseOrder={false} />
     </div>

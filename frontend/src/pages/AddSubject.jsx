@@ -21,7 +21,7 @@ const AddSubject = () => {
       }
 
       await axios.post(
-        "http://localhost:7000/v1/subjects",
+        "https://canibunk.onrender.com/v1/subjects",
         {
           name,
           criteria: Number(criteria),

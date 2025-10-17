@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import FeaturesCard from "../components/FeaturesCard";
@@ -7,10 +7,19 @@ import Navbar from "../components/Navbar";
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  // SEO: Update page title and meta description
+  useEffect(() => {
+    document.title = "CanIBunk - Smart Attendance Tracker for Students";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Track your college attendance easily with CanIBunk. Know exactly when you can skip class without falling below the minimum attendance requirement.");
+    }
+  }, []);
+
   const handleGetStartedClick = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:7000/v1/user/checkLogin",
+        "https://canibunk.onrender.com/v1/user/checkLogin",
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -53,8 +62,8 @@ const LandingPage = () => {
       <Navbar/>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-4 sm:px-6 flex flex-col items-center justify-center min-h-screen text-center py-20">
-        <div className="max-w-3xl">
+      <main className="container mx-auto px-4 sm:px-6 flex flex-col items-center justify-center min-h-screen text-center py-20" role="main">
+        <article className="max-w-3xl">
           <h1 className="font-poppins text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
             One tap to know if you can{" "}
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent gradient-animate">
@@ -74,11 +83,12 @@ const LandingPage = () => {
             <button
               onClick={handleGetStartedClick}
               className="inline-block px-8 sm:px-10 py-3 sm:py-4 text-sm sm:text-base text-white font-semibold rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+              aria-label="Get started with CanIBunk attendance tracker"
             >
               Get Started
             </button>
           </div>
-        </div>
+        </article>
       </main>
     </div>
   );

@@ -59,14 +59,14 @@ const SubjectView = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:7000/v1/lectures/${lectureId}`, {
+      await axios.delete(`https://canibunk.onrender.com/v1/lectures/${lectureId}`, {
         withCredentials: true,
         headers: { "Content-Type": "application/json" },
       });
 
       // Refresh lectures and subject data
       const lecturesResponse = await axios.get(
-        `http://localhost:7000/v1/lectures/${id}`,
+        `https://canibunk.onrender.com/v1/lectures/${id}`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -75,7 +75,7 @@ const SubjectView = () => {
       setLectures(lecturesResponse.data);
 
       const subjectResponse = await axios.get(
-        `http://localhost:7000/v1/subjects/${id}`,
+        `https://canibunk.onrender.com/v1/subjects/${id}`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -94,7 +94,7 @@ const SubjectView = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:7000/v1/subjects/${id}`, {
+      await axios.delete(`https://canibunk.onrender.com/v1/subjects/${id}`, {
         withCredentials: true,
         headers: { "Content-Type": "application/json" },
       });
@@ -111,7 +111,7 @@ const SubjectView = () => {
     const fetchSubject = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/v1/subjects/${id}`,
+          `https://canibunk.onrender.com/v1/subjects/${id}`,
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },

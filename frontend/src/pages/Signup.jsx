@@ -19,7 +19,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:7000/v1/user/register",
+        "https://canibunk.onrender.com/v1/user/register",
         {
           name,
           email,

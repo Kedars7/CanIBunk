@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:7000/v1/user/login",
+        "https://canibunk.onrender.com/v1/user/login",
         { email, password },
         {
           withCredentials: true,

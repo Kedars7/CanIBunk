@@ -14,7 +14,7 @@ const AddLecture = () => {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get("http://localhost:7000/v1/subjects", {
+        const response = await axios.get("https://canibunk.onrender.com/v1/subjects", {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
         });
@@ -38,7 +38,7 @@ const AddLecture = () => {
 
     try {
       await axios.post(
-        "http://localhost:7000/v1/lectures",
+        "https://canibunk.onrender.com/v1/lectures",
         { subjectId: selectedSubject, conducted, attended },
         {
           withCredentials: true,

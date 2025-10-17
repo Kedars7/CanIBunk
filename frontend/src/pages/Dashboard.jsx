@@ -16,7 +16,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get("http://localhost:7000/v1/subjects", {
+        const response = await axios.get("https://canibunk.onrender.com/subjects", {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
         });

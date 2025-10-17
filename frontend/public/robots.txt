@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow private pages
+Disallow: /dashboard
+Disallow: /addsubject
+Disallow: /addlecture
+Disallow: /subjectview
+
+# Allow public pages
+Allow: /
+Allow: /login
+Allow: /signup
+
+# Sitemap
+Sitemap: https://canibunk.com/sitemap.xml
