@@ -6,7 +6,6 @@ import Dashboard from './pages/Dashboard';
 import AddLecture from './pages/AddLecture';
 import SubjectView from './pages/SubjectView';
 import AddSubject from './pages/AddSubject';
-import Home from './pages/Home';
 import Landing from './pages/Landing';
 import NotFound from './pages/NotFound';
 import {Toaster} from 'react-hot-toast';
